@@ -1,45 +1,62 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const SatttApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SatttApp extends StatelessWidget {
+  const SatttApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Container Widget'),),
-          body: Container(
-            margin: const EdgeInsets.all(20),
-            padding: const EdgeInsets.all(10),
-            color: Colors.blue,
-              child: Text("Dengan Margin dan Padding", style: TextStyle(color: Colors.white),),
-            ),
+          title: const Text("Belajar Scaffold & Appbar"),
+          backgroundColor: const Color.fromARGB(255, 34, 126, 246),
+          actions: const [
+            Icon(Icons.search),
+            Icon(Icons.settings),
+          ],
+        ),
+        body: const   Center(
+          child: Text("ini body aplikasi"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.add),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: const<Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(color: Colors.blue),
+                child: Text(
+                  'Drawer Header',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                ),
+              ),
+              ListTile(leading: Icon(Icons.message),title: Text("Messages")),
+              ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text("Profile"),
+              ),
+              ListTile(leading: Icon(Icons.settings),title: Text("Settings")),
+            ],
           ),
-      );
-  }
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const<BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business' 
+            ),
+          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
+          ],
+        ),
+     ),
+  );
 }
-//           Center(
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: [
-//                 const Text("Atas"),
-//                 Row(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: const [
-//                     Icon(Icons.star, color: Colors.red, size: 40),
-//                     Icon(Icons.star, color: Colors.red, size: 40),
-//                     Icon(Icons.star, color: Colors.red, size: 40),
-//                   ],
-//                 ),
-//                 const Text("Bawah"),
-//               ],
-//             ),
-//             ),
-//           ),
-//     );
-//   }
-// }
+}
