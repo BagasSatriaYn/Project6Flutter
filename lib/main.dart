@@ -11,22 +11,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Belajar Scaffold & AppBar'),
-          backgroundColor: Colors.purple,
-          actions: const[
-            Icon( Icons.search),
-            Icon( Icons.settings),
-          ],
-        ),
-        body: const Center(
-          child: Text('Ini Body Aplikasi'),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          backgroundColor: Colors.purple,
-          child: const Icon(Icons.add),
-        ),
-      ),
+          title: const Text('Column & Row Example')),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("Atas"),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(Icons.star, color: Colors.red, size: 40),
+                    Icon(Icons.star, color: Colors.red, size: 40),
+                    Icon(Icons.star, color: Colors.red, size: 40),
+                  ],
+                ),
+                const Text("Bawah"),
+              ],
+            ),
+            ),
+          ),
     );
   }
 }
