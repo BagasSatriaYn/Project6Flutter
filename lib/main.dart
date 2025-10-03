@@ -13,14 +13,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Container Widget'),),
           body: Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.amber,
-            child: const Center(
-              child: Text("Halo Flutter"),
+            margin: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
+            color: Colors.blue,
+              child: Text("Dengan Margin dan Padding", style: TextStyle(color: Colors.white),),
             ),
           ),
-      ),
       );
   }
 }
